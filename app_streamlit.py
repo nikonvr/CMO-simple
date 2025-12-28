@@ -79,14 +79,14 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Import des fonctions de calcul depuis le fichier original
-# On essaie d'importer directement - PyQt6 doit être installé (même si on ne l'utilise pas)
+# Import des fonctions de calcul depuis le fichier optimisé pour le web
 try:
-    from cm_simple7 import calcul_empilement, parse_empilement_string, safe_str_to_float, safe_str_to_int
+    # On importe depuis cm_calc (fichier sans PyQt6)
+    from cm_calc import calcul_empilement, parse_empilement_string, safe_str_to_float, safe_str_to_int
 except ImportError as e:
-    st.error(f"❌ Erreur d'import: {str(e)}\n\nAssurez-vous que PyQt6 est installé: pip install PyQt6")
+    st.error(f"❌ Erreur d'import: {str(e)}\n\nAssurez-vous que le fichier cm_calc.py est présent.")
     st.stop()
-
+    
 # Fonctions utilitaires (déjà importées, mais définies aussi localement pour compatibilité)
 def safe_str_to_float(text):
     """Convertit une chaîne en float de manière robuste, gérant point et virgule."""

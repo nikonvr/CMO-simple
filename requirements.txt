@@ -3,6 +3,3 @@ numpy
 matplotlib
 pandas
 xlsxwriter
-PyQt6
-mplcursors
-
